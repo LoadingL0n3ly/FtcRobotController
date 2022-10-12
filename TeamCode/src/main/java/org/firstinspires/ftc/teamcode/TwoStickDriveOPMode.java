@@ -39,7 +39,7 @@ public class TwoStickDriveOPMode extends LinearOpMode {
             double rightPower;
 
             double drivePower = -gamepad1.left_stick_y; // get left stick power
-            double turnPower = gamepad1.right_stick_x; // get right stick turn power. Right turn position = 1, left = -1
+            double turnPower = 2 * (gamepad1.right_stick_x); // get right stick turn power. Right turn position = 1, left = -1
 
             // Just combining power of wheel (based off left stick power) to turn power to determine how much it should turn
             leftPower = Range.clip(drivePower - turnPower, -1.0, 1.0);
@@ -65,7 +65,7 @@ public class TwoStickDriveOPMode extends LinearOpMode {
             rightMotor.setPower(rightPower);
             telemetry.addData("Right Motor Power",rightPower);
             telemetry.addData("Right Bumper", rightBumper);
-            telemetry.addData("Left Bumper", leftBumper); 
+            telemetry.addData("Left Bumper", leftBumper);
             telemetry.update();
 
 
